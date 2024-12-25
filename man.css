@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Body */
+body {
+  background-color: #f7f7f2;
+  color: #1e1e24;
+}
+
+/* Add the typewriter animation */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.home-text h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000; /* Add a cursor effect */
+  width: 0;
+  animation: typewriter 5s steps(50) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 8rem;
+  background-color: #f7f7f2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  color: #1e1e24;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navmenu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navmenu a {
+  color: #1e1e24;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: color 0.3s;
+}
+
+.navmenu a:hover {
+  color: #007acc;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 8rem;
+  text-align: center;
+}
+
+.home-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-text p {
+  margin-bottom: 2rem;
+}
+
+/* Sections */
+section {
+  padding: 8rem 8rem;
+  min-height: 100vh;
+}
+
+.about, .skills, .contact {
+  margin-top: 5rem;
+}
+
+.skills {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f7f7f2;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  width: 120px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden; /* Ensure background effect stays within boundaries */
+}
+
+.skill i {
+  font-size: 2.5rem; /* Icon size */
+  color: #007acc; /* Icon color */
+}
+
+.skill p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e1e24;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skill hover effects */
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Background effect on hover */
+.skill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #cc3000; /* Background color on hover */
+  transition: all 0.3s ease;
+}
+
+.skill:hover::before {
+  left: 0; /* Move background into position */
+}
+
+/* Change text color on hover */
+.skill:hover p {
+  color: #fff; /* Change text color when hovered */
+}
+
+/* Music Section Animation */
+.music-list iframe {
+  transition: transform 0.8s ease;
+}
+
+.music-list iframe:hover {
+  transform: scale(1.1);
+}
+
+/* Social Icons */
+.socials-icons {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2%;
+}
+
+.socials-icons a {
+  display: block;
+  margin: 15px 0;
+  font-size: 1.5rem;
+  color: #1e1e24;
+  transition: transform 0.3s;
+}
+
+.socials-icons a:hover {
+  transform: rotate(360deg); /* Rotation effect */
+}
+
+/* Scroll Button */
+.scroll-btn {
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+  font-weight: 600;
+  color: #1e1e24;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-btn i {
+  margin-left: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Jam */
+.clock {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #333;
+  text-align: center;
+}

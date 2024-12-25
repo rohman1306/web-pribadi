@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="man.css" />
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Nur Rohman Baidillah</a>
+        <ul class="navmenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-text">
+            <h2>Hello, I'm Rohman <i class="ph-bold ph-hand-waving"></i></h2>
+            <h3>Web Developer</h3>
+            <p>I'm a Web Developer based in Tangerang, passionate and dedicated to my work.</p>
+            <div id="clock" class="clock"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I’m a Web Developer with a focus on crafting clean and user-friendly experiences. I have a strong passion for building web applications and continuously learning new technologies.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-list">
+            <div class="skill"><p>HTML</p></div>
+            <div class="skill"><p>CSS</p></div>
+            <div class="skill"><p>Python</p></div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="music">
+        <h2>My Favorite Music</h2>
+        <div class="music-list">
+            <!-- First Song: Young Dumb -->
+            <iframe
+                src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <!-- Second Song -->
+            <iframe
+                src="https://open.spotify.com/embed/track/5Z3GHaZ6ec9bsiI5BenrbY?si=d0077297ff914059"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <!-- Third Song -->
+            <iframe
+                src="https://open.spotify.com/embed/track/3CeCwYWvdfXbZLXFhBrbnf?si=16aba4e94eee478d"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <!-- Fourth Song -->
+            <iframe
+                src="https://open.spotify.com/embed/track/3AAAGS7iM1ekDywqdYMJG2?si=da0359b8d2784930"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <!-- Fifth Song -->
+            <iframe
+                src="https://open.spotify.com/embed/track/4O0OMqWfNx46cQ3QraORIz?si=50060c0dfe914923"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <!-- Sixth Song -->
+            <iframe
+                src="https://open.spotify.com/embed/track/1ZPVEo8RfmrEz8YAD5n6rW?si=17b9149a85fd4b1c"
+                width="300"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>You can contact me via email or social media links below.</p>
+        <p><a href="mailto:ftb@uym.ac.id">Email me</a></p>
+        <p><a href="tel:(021) 55726558">Call me</a></p>
+    </section>
+
+    <!-- Social Icons -->
+    <div class="socials-icons">
+        <a href="https://www.instagram.com/baidillah_rohman13/" target="_blank"><i class="ph-bold ph-instagram-logo"></i></a>
+        <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="ph-bold ph-linkedin-logo"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="ph-bold ph-github-logo"></i></a>
+    </div>
+
+    <!-- Scroll Button -->
+    <a href="#home" class="scroll-btn">Scroll up <i class="ph-bold ph-arrow-bend-right"></i></a>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        document.querySelectorAll('.navmenu a, .scroll-btn').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- JavaScript for clock -->
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            clockElement.textContent = `WIB: ${timeString}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
